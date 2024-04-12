@@ -1,5 +1,4 @@
 "use client"
-import GlobalApi from '@/app/_utils/GlobalApi';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import {
@@ -35,7 +34,6 @@ function MyOrder() {
             <div className='py-8 mx-7 md:mx-20'>
                 <h2 className='text-3xl font-bold text-primary'>Order History</h2>
                <div className='mt-10'>
-              {orderList.map((item,index)=>{
                 <Collapsible>
                 <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
                 <CollapsibleContent>
@@ -43,7 +41,6 @@ function MyOrder() {
                   required.
                 </CollapsibleContent>
               </Collapsible>
-              })}
                 
                
                 </div>
