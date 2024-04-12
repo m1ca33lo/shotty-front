@@ -10,17 +10,8 @@ import moment from 'moment';
 import MyOrderItem from './_components/MyOrderItem';
   
 function MyOrder() {
-    const jwt=sessionStorage.getItem('jwt');
-    const user=JSON.parse(sessionStorage.getItem('user'));
     const router=useRouter();
     const [orderList,setOrderList]=useState([]);
-    useEffect(()=>{
-        if(!jwt)
-        {
-            router.replace('/');
-        };
-        getMyOrder();
-    },[]);
     const getMyOrder = async () => {
           const orderList_ = await GlobalApi.getMyOrder(user.id, jwt);
           console.log(orderList_);

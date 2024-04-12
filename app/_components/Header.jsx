@@ -30,9 +30,6 @@ import { toast } from 'sonner'
 function Header() {
 
     const [categoryList,setCategoryList]=useState([]);
-    const isLogin=sessionStorage.getItem('jwt')?true:false;
-    const user=JSON.parse(sessionStorage.getItem('user'));
-    const jwt=sessionStorage.getItem('jwt');
     const [totalCartItem,setTotalCartItem]=useState(0)
     const {updateCart,setUpdateCart}=useContext(UpdateCartContext)
     const [cartItemList,setCartItemList]=useState([]);
@@ -61,10 +58,6 @@ function Header() {
   };
   
 
-    const onSignOut=()=>{
-        sessionStorage.clear();
-        router.push('/sign-in');
-    }
 
     const onDeleteItem=(id)=>{
             GlobalApi.deleteCartItem(id,jwt).then(resp=>{

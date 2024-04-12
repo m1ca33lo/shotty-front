@@ -14,20 +14,11 @@ function SignIn() {
   const [email,setEmail]=useState();
   const router=useRouter();
   const [loader,setLoader]=useState();
-  useEffect(()=>{
-      const jwt=sessionStorage.getItem('jwt');
-      if(jwt)
-      {
-          router.push('/')
-      }
-  },[])
 
 
   const onSignIn=()=>{
     setLoader(true)
     GlobalApi.SignIn(email,password).then(resp=>{
-        sessionStorage.setItem('user',JSON.stringify(resp.data.user));
-        sessionStorage.setItem('jwt',resp.data.jwt);
         toast("Login Successfully")
         router.push('/');
         setLoader(false)
