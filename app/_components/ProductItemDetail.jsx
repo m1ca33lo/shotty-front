@@ -11,8 +11,6 @@ import { UpdateCartContext } from '../_context/UpdateCartContext'
 function ProductItemDetail({product}) {
     const mrp = '58.00'
     const sellingPrice = '49.00'
-    const jwt=sessionStorage.getItem('jwt');
-    const user=JSON.parse(sessionStorage.getItem('user'));
     const {updateCart,setUpdateCart}=useContext(UpdateCartContext)
     const router=useRouter();
     const [quantity,setQuantity]=useState(1);

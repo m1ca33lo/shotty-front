@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/button'
 import { ArrowBigRight } from 'lucide-react'
 function Checkout() {
 
-  const user=JSON.parse(sessionStorage.getItem('user'));
-  const jwt=sessionStorage.getItem('jwt');
   const [totalCartItem,setTotalCartItem]=useState(0)
   const [cartItemList,setCartItemList]=useState([]);
   const [subtotal,setSubTotal]=useState(0);
